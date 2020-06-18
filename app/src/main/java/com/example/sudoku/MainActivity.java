@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 if(checkBoxSimple.isChecked()){
                     Intent startGameEasy = new Intent(MainActivity.this, Game.class);
-                    startGameEasy.putExtra("Easy", 1);                                  //1 ist einfach | 2 ist mittel | 3 ist schwer
+                    startGameEasy.putExtra("Difficulty", 1);                                  //1 ist einfach | 2 ist mittel | 3 ist schwer
                     startActivity(startGameEasy);
                 }
                 //HIER MUSS DANN MITEL UND SCHWER EINGEFÜGT WERDEN
