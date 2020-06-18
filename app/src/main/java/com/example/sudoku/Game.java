@@ -13,7 +13,7 @@ public class Game extends AppCompatActivity {
 
     CheckBox checkBox1, checkBox2, checkBox3, checkBox4, checkBox5, checkBox6, checkBox7, checkBox8, checkBox9;
     SudokuLogic sudoku = new SudokuLogic();
-    Button buttons[][] = new Button[10][10];                                                        //10 10 weil iches verkackt habe beim erstellen statt 9 9 
+    Button buttons[][] = new Button[9][9];                                                        //10 10 weil iches verkackt habe beim erstellen statt 9 9
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -154,26 +154,98 @@ public class Game extends AppCompatActivity {
 
 
         //buttons Reihe 1
-        buttons[1][1] = findViewById(R.id.btn11);
-        buttons[1][2] = findViewById(R.id.btn12);
-        buttons[1][3] = findViewById(R.id.btn13);
-        buttons[1][4] = findViewById(R.id.btn14);
-        buttons[1][5] = findViewById(R.id.btn15);
-        buttons[1][6] = findViewById(R.id.btn16);
-        buttons[1][7] = findViewById(R.id.btn17);
-        buttons[1][8] = findViewById(R.id.btn18);
-        buttons[1][9] = findViewById(R.id.btn19);
+        buttons[0][0] = findViewById(R.id.btn11);
+        buttons[0][1] = findViewById(R.id.btn12);
+        buttons[0][2] = findViewById(R.id.btn13);
+        buttons[0][3] = findViewById(R.id.btn14);
+        buttons[0][4] = findViewById(R.id.btn15);
+        buttons[0][5] = findViewById(R.id.btn16);
+        buttons[0][6] = findViewById(R.id.btn17);
+        buttons[0][7] = findViewById(R.id.btn18);
+        buttons[0][8] = findViewById(R.id.btn19);
         //buttons Reihe 1 ONCLickListeners
+        buttons[0][0].setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                setButtonTextToCheckBox(buttons[0][0]);
+            }
+        });
+        buttons[0][1].setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                setButtonTextToCheckBox(buttons[0][1]);
+            }
+        });
+        buttons[0][2].setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                setButtonTextToCheckBox(buttons[0][2]);
+            }
+        });
+        buttons[0][3].setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                setButtonTextToCheckBox(buttons[0][3]);
+            }
+        });
+        buttons[0][4] .setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                setButtonTextToCheckBox(buttons[0][4]);
+            }
+        });
+        buttons[0][5].setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                setButtonTextToCheckBox(buttons[0][5]);
+            }
+        });
+        buttons[0][6].setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                setButtonTextToCheckBox(buttons[0][6]);
+            }
+        });
+        buttons[0][7].setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                setButtonTextToCheckBox(buttons[0][7]);
+            }
+        });
+        buttons[0][8].setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                setButtonTextToCheckBox(buttons[0][8]);
+            }
+        });
+
+        //buttons Reihe 2
+        buttons[1][0] = findViewById(R.id.btn21);
+        buttons[1][1]  = findViewById(R.id.btn22);
+        buttons[1][2]  = findViewById(R.id.btn23);
+        buttons[1][3]  = findViewById(R.id.btn24);
+        buttons[1][4]  = findViewById(R.id.btn25);
+        buttons[1][5]  = findViewById(R.id.btn26);
+        buttons[1][6]  = findViewById(R.id.btn27);
+        buttons[1][7]  = findViewById(R.id.btn28);
+        buttons[1][8]  = findViewById(R.id.btn29);
+        //Buttons Reihe 2 OnClickListener
+        buttons[1][0].setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                setButtonTextToCheckBox(buttons[1][0]);
+            }
+        });
         buttons[1][1].setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 setButtonTextToCheckBox(buttons[1][1]);
             }
         });
-        buttons[1][2].setOnClickListener(new View.OnClickListener() {
+        buttons[1][2] .setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                setButtonTextToCheckBox(buttons[1][2]);
+                setButtonTextToCheckBox(buttons[1][2] );
             }
         });
         buttons[1][3].setOnClickListener(new View.OnClickListener() {
@@ -191,7 +263,7 @@ public class Game extends AppCompatActivity {
         buttons[1][5] .setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                setButtonTextToCheckBox(buttons[1][5]);
+                setButtonTextToCheckBox(buttons[1][5] );
             }
         });
         buttons[1][6].setOnClickListener(new View.OnClickListener() {
@@ -200,10 +272,10 @@ public class Game extends AppCompatActivity {
                 setButtonTextToCheckBox(buttons[1][6]);
             }
         });
-        buttons[1][7].setOnClickListener(new View.OnClickListener() {
+        buttons[1][7] .setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                setButtonTextToCheckBox(buttons[1][7]);
+                setButtonTextToCheckBox(buttons[1][7] );
             }
         });
         buttons[1][8].setOnClickListener(new View.OnClickListener() {
@@ -212,24 +284,24 @@ public class Game extends AppCompatActivity {
                 setButtonTextToCheckBox(buttons[1][8]);
             }
         });
-        buttons[1][9].setOnClickListener(new View.OnClickListener() {
+
+        //buttons Reihe 3
+        buttons[2][0] = findViewById(R.id.btn31);
+        buttons[2][1]  = findViewById(R.id.btn32);
+        buttons[2][2]  = findViewById(R.id.btn33);
+        buttons[2][3]  = findViewById(R.id.btn34);
+        buttons[2][4]  = findViewById(R.id.btn35);
+        buttons[2][5]  = findViewById(R.id.btn36);
+        buttons[2][6]  = findViewById(R.id.btn37);
+        buttons[2][7]  = findViewById(R.id.btn38);
+        buttons[2][8]  = findViewById(R.id.btn39);
+        //Buttons Reihe 3 OnClickListener
+        buttons[2][0].setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                setButtonTextToCheckBox(buttons[1][9]);
+                setButtonTextToCheckBox(buttons[2][0]);
             }
         });
-
-        //buttons Reihe 2
-        buttons[2][1] = findViewById(R.id.btn21);
-        buttons[2][2]  = findViewById(R.id.btn22);
-        buttons[2][3]  = findViewById(R.id.btn23);
-        buttons[2][4]  = findViewById(R.id.btn24);
-        buttons[2][5]  = findViewById(R.id.btn25);
-        buttons[2][6]  = findViewById(R.id.btn26);
-        buttons[2][7]  = findViewById(R.id.btn27);
-        buttons[2][8]  = findViewById(R.id.btn28);
-        buttons[2][9]  = findViewById(R.id.btn29);
-        //Buttons Reihe 2 OnClickListener
         buttons[2][1].setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -242,16 +314,16 @@ public class Game extends AppCompatActivity {
                 setButtonTextToCheckBox(buttons[2][2]);
             }
         });
-        buttons[2][3] .setOnClickListener(new View.OnClickListener() {
+        buttons[2][3].setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                setButtonTextToCheckBox(buttons[2][3] );
+                setButtonTextToCheckBox(buttons[2][3]);
             }
         });
-        buttons[2][4].setOnClickListener(new View.OnClickListener() {
+        buttons[2][4] .setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                setButtonTextToCheckBox(buttons[2][4]);
+                setButtonTextToCheckBox(buttons[2][4] );
             }
         });
         buttons[2][5].setOnClickListener(new View.OnClickListener() {
@@ -278,24 +350,23 @@ public class Game extends AppCompatActivity {
                 setButtonTextToCheckBox(buttons[2][8] );
             }
         });
-        buttons[2][9].setOnClickListener(new View.OnClickListener() {
+        //buttons reihe 4
+        buttons[3][0] = findViewById(R.id.btn41);
+        buttons[3][1] = findViewById(R.id.btn42);
+        buttons[3][2] = findViewById(R.id.btn43);
+        buttons[3][3] = findViewById(R.id.btn44);
+        buttons[3][4] = findViewById(R.id.btn45);
+        buttons[3][5] = findViewById(R.id.btn46);
+        buttons[3][6] = findViewById(R.id.btn47);
+        buttons[3][7] = findViewById(R.id.btn48);
+        buttons[3][8] = findViewById(R.id.btn49);
+        //Buttons Reihe 4 OnClickListener
+        buttons[3][0].setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                setButtonTextToCheckBox(buttons[2][9]);
+                setButtonTextToCheckBox(buttons[3][0]);
             }
         });
-
-        //buttons Reihe 3
-        buttons[3][1] = findViewById(R.id.btn31);
-        buttons[3][2]  = findViewById(R.id.btn32);
-        buttons[3][3]  = findViewById(R.id.btn33);
-        buttons[3][4]  = findViewById(R.id.btn34);
-        buttons[3][5]  = findViewById(R.id.btn35);
-        buttons[3][6]  = findViewById(R.id.btn36);
-        buttons[3][7]  = findViewById(R.id.btn37);
-        buttons[3][8]  = findViewById(R.id.btn38);
-        buttons[3][9]  = findViewById(R.id.btn39);
-        //Buttons Reihe 3 OnClickListener
         buttons[3][1].setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -320,10 +391,10 @@ public class Game extends AppCompatActivity {
                 setButtonTextToCheckBox(buttons[3][4]);
             }
         });
-        buttons[3][5] .setOnClickListener(new View.OnClickListener() {
+        buttons[3][5].setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                setButtonTextToCheckBox(buttons[3][5] );
+                setButtonTextToCheckBox(buttons[3][5]);
             }
         });
         buttons[3][6].setOnClickListener(new View.OnClickListener() {
@@ -332,10 +403,10 @@ public class Game extends AppCompatActivity {
                 setButtonTextToCheckBox(buttons[3][6]);
             }
         });
-        buttons[3][7] .setOnClickListener(new View.OnClickListener() {
+        buttons[3][7].setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                setButtonTextToCheckBox(buttons[3][7] );
+                setButtonTextToCheckBox(buttons[3][7]);
             }
         });
         buttons[3][8].setOnClickListener(new View.OnClickListener() {
@@ -344,23 +415,24 @@ public class Game extends AppCompatActivity {
                 setButtonTextToCheckBox(buttons[3][8]);
             }
         });
-        buttons[3][9] .setOnClickListener(new View.OnClickListener() {
+
+        //buttons Reihe 5
+        buttons[4][0] = findViewById(R.id.btn51);
+        buttons[4][1] = findViewById(R.id.btn52);
+        buttons[4][2] = findViewById(R.id.btn53);
+        buttons[4][3] = findViewById(R.id.btn54);
+        buttons[4][4] = findViewById(R.id.btn55);
+        buttons[4][5] = findViewById(R.id.btn56);
+        buttons[4][6] = findViewById(R.id.btn57);
+        buttons[4][7] = findViewById(R.id.btn58);
+        buttons[4][8] = findViewById(R.id.btn59);
+        //Buttons Reihe 5 OnClickListener
+        buttons[4][0].setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                setButtonTextToCheckBox(buttons[3][9] );
+                setButtonTextToCheckBox(buttons[4][0]);
             }
         });
-        //buttons reihe 4
-        buttons[4][1] = findViewById(R.id.btn41);
-        buttons[4][2] = findViewById(R.id.btn42);
-        buttons[4][3] = findViewById(R.id.btn43);
-        buttons[4][4] = findViewById(R.id.btn44);
-        buttons[4][5] = findViewById(R.id.btn45);
-        buttons[4][6] = findViewById(R.id.btn46);
-        buttons[4][7] = findViewById(R.id.btn47);
-        buttons[4][8] = findViewById(R.id.btn48);
-        buttons[4][9] = findViewById(R.id.btn49);
-        //Buttons Reihe 4 OnClickListener
         buttons[4][1].setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -409,24 +481,25 @@ public class Game extends AppCompatActivity {
                 setButtonTextToCheckBox(buttons[4][8]);
             }
         });
-        buttons[4][9].setOnClickListener(new View.OnClickListener() {
+
+
+        //buttons Reihe 6
+        buttons[5][0] = findViewById(R.id.btn61);
+        buttons[5][1] = findViewById(R.id.btn62);
+        buttons[5][2] = findViewById(R.id.btn63);
+        buttons[5][3] = findViewById(R.id.btn64);
+        buttons[5][4] = findViewById(R.id.btn65);
+        buttons[5][5] = findViewById(R.id.btn66);
+        buttons[5][6] = findViewById(R.id.btn67);
+        buttons[5][7] = findViewById(R.id.btn68);
+        buttons[5][8] = findViewById(R.id.btn69);
+        //Buttons Reihe 6 OnClickListener
+        buttons[5][0].setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                setButtonTextToCheckBox(buttons[4][9]);
+                setButtonTextToCheckBox(buttons[5][0]);
             }
         });
-
-        //buttons Reihe 5
-        buttons[5][1] = findViewById(R.id.btn51);
-        buttons[5][2] = findViewById(R.id.btn52);
-        buttons[5][3] = findViewById(R.id.btn53);
-        buttons[5][4] = findViewById(R.id.btn54);
-        buttons[5][5] = findViewById(R.id.btn55);
-        buttons[5][6] = findViewById(R.id.btn56);
-        buttons[5][7] = findViewById(R.id.btn57);
-        buttons[5][8] = findViewById(R.id.btn58);
-        buttons[5][9] = findViewById(R.id.btn59);
-        //Buttons Reihe 5 OnClickListener
         buttons[5][1].setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -475,25 +548,25 @@ public class Game extends AppCompatActivity {
                 setButtonTextToCheckBox(buttons[5][8]);
             }
         });
-        buttons[5][9].setOnClickListener(new View.OnClickListener() {
+
+
+        //buttons Reihe 7
+        buttons[6][0] = findViewById(R.id.btn71);
+        buttons[6][1] = findViewById(R.id.btn72);
+        buttons[6][2] = findViewById(R.id.btn73);
+        buttons[6][3] = findViewById(R.id.btn74);
+        buttons[6][4] = findViewById(R.id.btn75);
+        buttons[6][5] = findViewById(R.id.btn76);
+        buttons[6][6] = findViewById(R.id.btn77);
+        buttons[6][7] = findViewById(R.id.btn78);
+        buttons[6][8] = findViewById(R.id.btn79);
+        //Buttons Reihe 7 OnClickListener
+        buttons[6][0].setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                setButtonTextToCheckBox(buttons[5][9]);
+                setButtonTextToCheckBox(buttons[6][0]);
             }
         });
-
-
-        //buttons Reihe 6
-        buttons[6][1] = findViewById(R.id.btn61);
-        buttons[6][2] = findViewById(R.id.btn62);
-        buttons[6][3] = findViewById(R.id.btn63);
-        buttons[6][4] = findViewById(R.id.btn64);
-        buttons[6][5] = findViewById(R.id.btn65);
-        buttons[6][6] = findViewById(R.id.btn66);
-        buttons[6][7] = findViewById(R.id.btn67);
-        buttons[6][8] = findViewById(R.id.btn68);
-        buttons[6][9] = findViewById(R.id.btn69);
-        //Buttons Reihe 6 OnClickListener
         buttons[6][1].setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -542,25 +615,25 @@ public class Game extends AppCompatActivity {
                 setButtonTextToCheckBox(buttons[6][8]);
             }
         });
-        buttons[6][9].setOnClickListener(new View.OnClickListener() {
+
+
+        //buttons Reihe 8
+        buttons[7][0] = findViewById(R.id.btn81);
+        buttons[7][1] = findViewById(R.id.btn82);
+        buttons[7][2] = findViewById(R.id.btn83);
+        buttons[7][3] = findViewById(R.id.btn84);
+        buttons[7][4] = findViewById(R.id.btn85);
+        buttons[7][5] = findViewById(R.id.btn86);
+        buttons[7][6] = findViewById(R.id.btn87);
+        buttons[7][7] = findViewById(R.id.btn88);
+        buttons[7][8] = findViewById(R.id.btn89);
+        //Buttons Reihe 8 OnClickListener
+        buttons[7][0].setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                setButtonTextToCheckBox(buttons[6][9]);
+                setButtonTextToCheckBox(buttons[7][0]);
             }
         });
-
-
-        //buttons Reihe 7
-        buttons[7][1] = findViewById(R.id.btn71);
-        buttons[7][2] = findViewById(R.id.btn72);
-        buttons[7][3] = findViewById(R.id.btn73);
-        buttons[7][4] = findViewById(R.id.btn74);
-        buttons[7][5] = findViewById(R.id.btn75);
-        buttons[7][6] = findViewById(R.id.btn76);
-        buttons[7][7] = findViewById(R.id.btn77);
-        buttons[7][8] = findViewById(R.id.btn78);
-        buttons[7][9] = findViewById(R.id.btn79);
-        //Buttons Reihe 7 OnClickListener
         buttons[7][1].setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -609,25 +682,25 @@ public class Game extends AppCompatActivity {
                 setButtonTextToCheckBox(buttons[7][8]);
             }
         });
-        buttons[7][9].setOnClickListener(new View.OnClickListener() {
+
+
+        //buttons Reihe 9
+        buttons[8][0] = findViewById(R.id.btn91);
+        buttons[8][1] = findViewById(R.id.btn92);
+        buttons[8][2] = findViewById(R.id.btn93);
+        buttons[8][3] = findViewById(R.id.btn94);
+        buttons[8][4] = findViewById(R.id.btn95);
+        buttons[8][5] = findViewById(R.id.btn96);
+        buttons[8][6] = findViewById(R.id.btn97);
+        buttons[8][7] = findViewById(R.id.btn98);
+        buttons[8][8] = findViewById(R.id.btn99);
+        //Buttons Reihe 9 OnClickListener
+        buttons[8][0].setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                setButtonTextToCheckBox(buttons[7][9]);
+                setButtonTextToCheckBox(buttons[8][0]);
             }
         });
-
-
-        //buttons Reihe 8
-        buttons[8][1] = findViewById(R.id.btn81);
-        buttons[8][2] = findViewById(R.id.btn82);
-        buttons[8][3] = findViewById(R.id.btn83);
-        buttons[8][4] = findViewById(R.id.btn84);
-        buttons[8][5] = findViewById(R.id.btn85);
-        buttons[8][6] = findViewById(R.id.btn86);
-        buttons[8][7] = findViewById(R.id.btn87);
-        buttons[8][8] = findViewById(R.id.btn88);
-        buttons[8][9] = findViewById(R.id.btn89);
-        //Buttons Reihe 8 OnClickListener
         buttons[8][1].setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -676,85 +749,19 @@ public class Game extends AppCompatActivity {
                 setButtonTextToCheckBox(buttons[8][8]);
             }
         });
-        buttons[8][9].setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                setButtonTextToCheckBox(buttons[8][9]);
-            }
-        });
 
 
-        //buttons Reihe 9
-        buttons[9][1] = findViewById(R.id.btn91);
-        buttons[9][2] = findViewById(R.id.btn92);
-        buttons[9][3] = findViewById(R.id.btn93);
-        buttons[9][4] = findViewById(R.id.btn94);
-        buttons[9][5] = findViewById(R.id.btn95);
-        buttons[9][6] = findViewById(R.id.btn96);
-        buttons[9][7] = findViewById(R.id.btn97);
-        buttons[9][8] = findViewById(R.id.btn98);
-        buttons[9][9] = findViewById(R.id.btn99);
-        //Buttons Reihe 9 OnClickListener
-        buttons[9][1].setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                setButtonTextToCheckBox(buttons[9][1]);
-            }
-        });
-        buttons[9][2].setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                setButtonTextToCheckBox(buttons[9][2]);
-            }
-        });
-        buttons[9][3].setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                setButtonTextToCheckBox(buttons[9][3]);
-            }
-        });
-        buttons[9][4].setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                setButtonTextToCheckBox(buttons[9][4]);
-            }
-        });
-        buttons[9][5].setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                setButtonTextToCheckBox(buttons[9][5]);
-            }
-        });
-        buttons[9][6].setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                setButtonTextToCheckBox(buttons[9][6]);
-            }
-        });
-        buttons[9][7].setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                setButtonTextToCheckBox(buttons[9][7]);
-            }
-        });
-        buttons[9][8].setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                setButtonTextToCheckBox(buttons[9][8]);
-            }
-        });
-        buttons[9][9].setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                setButtonTextToCheckBox(buttons[9][9]);
-            }
-        });
+        int[][] sudoku = new int[9][9];
+        Intent intentSudoku = getIntent();
+        SudokuLogic sudokuClass = new SudokuLogic();
+        sudoku = sudokuClass.createSudoku(intentSudoku.getIntExtra("Difficulty",0));    //das sudoku wird hier erstellt
+        System.out.println("Sudoku gelöst");
 
-
-       // int[][] sudoku = new int[9][9];
-        //Intent intentSudoku = getIntent();
-       // SudokuLogic sudokuClass = new SudokuLogic();
-        //sudoku = sudokuClass.createSudoku(intentSudoku.getIntExtra("Difficulty",0));    //das sudoku wird hier erstellt
+        for(int i = 0; i < 9; i++){
+            for(int j = 0; j < 9; j++){
+                buttons[i][j].setText(String.valueOf(sudoku[i][j]));
+            }
+        }
     }
 
     public void setButtonTextToCheckBox(Button button){
