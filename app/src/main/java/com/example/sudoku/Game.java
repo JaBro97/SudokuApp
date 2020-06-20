@@ -755,7 +755,7 @@ public class Game extends AppCompatActivity {
         Intent intentSudoku = getIntent();
         SudokuLogic sudokuClass = new SudokuLogic();
         sudoku = sudokuClass.createSudoku(intentSudoku.getIntExtra("Difficulty",0));    //das sudoku wird hier erstellt
-        System.out.println("Sudoku gelöst");
+        //System.out.println("Sudoku gelöst");
 
         for(int i = 0; i < 9; i++){
             for(int j = 0; j < 9; j++){
