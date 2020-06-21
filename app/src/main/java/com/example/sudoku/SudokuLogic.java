@@ -19,8 +19,8 @@ public class SudokuLogic {
     boolean[] randomNumbertested= new boolean[9];
 
 
-
-    public int[][] createSudoku(int difficulty) {                                                    //kreiert anfangssudoku mit gewiser anzahl an starter zahlen | 1 leicht| 2 mittel| 3 schwer
+    //das ist das create sudoku was aufjeden fall klappt
+    public int[][] createSudokuKlappt(int difficulty) {                                                    //kreiert anfangssudoku mit gewiser anzahl an starter zahlen | 1 leicht| 2 mittel| 3 schwer
         //int[][] newSudoku = new int[9][9];
         for(int counterRow = 0; counterRow < 9; counterRow++){
             for(int counterCol = 0; counterCol < 9; counterCol++){
@@ -65,7 +65,7 @@ public class SudokuLogic {
                 System.out.println(testen);
             }
             int tralalala = 9;
-            return sudokuField;
+
 
             //copySudokuField(sudokuField, testfieldGlobal);
         }
@@ -80,7 +80,63 @@ public class SudokuLogic {
             }
         }
 
-        return null;
+        return sudokuField;
+    }
+
+    public int[][] createSudoku(int difficulty){
+        for(int counterRow = 0; counterRow < 9; counterRow++){
+            for(int counterCol = 0; counterCol < 9; counterCol++){
+                sudokuField[counterRow][counterCol] = 0;
+                testfieldGlobal[counterRow][counterCol] = 0;
+            }
+        }
+        int counterOfHowManyNumbersAreLeft = 0;
+        if (difficulty == 1){
+            sudokuField = doTheCreation(counterOfHowManyNumbersAreLeft, numberIfEasy);
+        }
+        if (difficulty == 2) {
+            sudokuField = doTheCreation(counterOfHowManyNumbersAreLeft, numberIfMedium);
+        }
+        if (difficulty == 3) {
+            sudokuField = doTheCreation(counterOfHowManyNumbersAreLeft, numberIfHard);
+        }
+
+        return sudokuField;
+    }
+
+    public int[][] doTheCreation(int counterOfHowManyNumbersAreLeft, int numberUpperBound){
+        boolean testen = false;
+        int randomRow = 0;
+        int randomCol = 0;
+        int randomValue = 0;
+        //boolean numberPlaceable = true;
+        while(!testen){
+            for(int i = 0; i < 9; i++){
+                for(int j = 0; j < 9; j++){
+                    testfieldGlobal[i][j] = 0;
+                    sudokuField[i][j] = 0;
+                }
+            }
+            counterOfHowManyNumbersAreLeft = 0;
+            while (counterOfHowManyNumbersAreLeft <= numberUpperBound) {
+                randomRow = randomSelf();
+                randomCol = randomSelf();
+                randomValue = randomSelf() + 1;
+                if((sudokuField[randomRow][randomCol] == 0) && (numberCanBePlaced(randomValue,randomRow,randomCol,sudokuField))){
+                    testfieldGlobal[randomRow][randomCol] = randomValue;
+                    sudokuField[randomRow][randomCol] = randomValue;
+                    counterOfHowManyNumbersAreLeft++;
+                }
+            }
+            int counterAmount = 0;
+            for(int i = 0; i < 9; i++){
+                for(int j = 0; j < 9; j++){
+                    counterAmount  = sudokuField[i][j];
+                }
+            }
+            testen = testWithRandomNumber(testfieldGlobal);
+        }
+        return sudokuField;
     }
 
     public int[][] copySudokuField(int[][] field1, int[][] field2){                                 //gibt field1 mit den werten von field2 aus
@@ -231,7 +287,7 @@ public class SudokuLogic {
                                 testfieldLocal[row][col] = number;
                                 // //System.out.println(number + " Number placed " + col + " " + row);
                                 if(test(testfieldLocal)){
-                                    System.out.println("solve ist true");                               //recursiver aufru der methode zum lösen des sudokuproblems
+                                                                                                    //recursiver aufru der methode zum lösen des sudokuproblems
                                     return true;
                                 }
                                 else{
@@ -255,5 +311,21 @@ public class SudokuLogic {
 
     public int[][] getSudokuField(){
         return sudokuField;
+    }
+
+    public boolean checkSudoku(int[][] localSudocuField){
+        boolean test = false;
+        for(int i = 0; i < 9; i++){
+            for(int j = 0; j < 9; j++){
+                test = numberCanBePlaced(localSudocuField[i][j], i, j, localSudocuField);
+                if(!test){
+                    break;
+                }
+            }
+            if(!test){
+                break;
+            }
+        }
+        return test;
     }
 }
