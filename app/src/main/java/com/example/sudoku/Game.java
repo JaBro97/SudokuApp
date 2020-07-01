@@ -26,6 +26,7 @@ public class Game extends AppCompatActivity implements View.OnClickListener{
     int[][] currentResult= new int[9][9];
     int[][] sudoku = new int[9][9];
     LinkedList<int[][]> zwischenstand = new LinkedList<int[][]>();
+    LinkedList<LoadObject> storedMoves = new LinkedList<LoadObject>();
 
 
     @Override
@@ -51,142 +52,6 @@ public class Game extends AppCompatActivity implements View.OnClickListener{
         buttons[0][6] = findViewById(R.id.btn17);
         buttons[0][7] = findViewById(R.id.btn18);
         buttons[0][8] = findViewById(R.id.btn19);
-        //buttons Reihe 1 ONCLickListeners
-        buttons[0][0].setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                txtViewCorrect.setText("");
-int[][] currentresultLocal = new int[9][9];
-for(int i = 0; i < 9; i++){
-      for(int j = 0; j < 9; j++){
-            currentresultLocal[i][j] = zwischenstand.getLast()[i][j];
-         }
-}
-                setButtonTextToCheckBox(buttons[0][0]);
-                machWas(0, 0);
-zwischenstand.addLast(currentresultLocal);
-            }
-        });
-        buttons[0][1].setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                txtViewCorrect.setText("");
-                int[][] currentresultLocal = new int[9][9];
-                for(int i = 0; i < 9; i++){
-                      for(int j = 0; j < 9; j++){
-                            currentresultLocal[i][j] = zwischenstand.getLast()[i][j];
-                         }
-                }
-                setButtonTextToCheckBox(buttons[0][1]);
-                machWas(0, 1);
-zwischenstand.addLast(currentresultLocal);
-            }
-        });
-        buttons[0][2].setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                txtViewCorrect.setText("");
-int[][] currentresultLocal = new int[9][9];
-for(int i = 0; i < 9; i++){
-      for(int j = 0; j < 9; j++){
-            currentresultLocal[i][j] = zwischenstand.getLast()[i][j];
-         }
-}
-                setButtonTextToCheckBox(buttons[0][2]);
-                machWas(0, 2);
-zwischenstand.addLast(currentresultLocal);
-            }
-        });
-        buttons[0][3].setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                txtViewCorrect.setText("");
-int[][] currentresultLocal = new int[9][9];
-for(int i = 0; i < 9; i++){
-      for(int j = 0; j < 9; j++){
-            currentresultLocal[i][j] = zwischenstand.getLast()[i][j];
-         }
-}
-                setButtonTextToCheckBox(buttons[0][3]);
-                machWas(0, 3);
-zwischenstand.addLast(currentresultLocal);
-            }
-        });
-        buttons[0][4].setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                txtViewCorrect.setText("");
-int[][] currentresultLocal = new int[9][9];
-for(int i = 0; i < 9; i++){
-      for(int j = 0; j < 9; j++){
-            currentresultLocal[i][j] = zwischenstand.getLast()[i][j];
-         }
-}
-                setButtonTextToCheckBox(buttons[0][4]);
-                machWas(0, 4);
-zwischenstand.addLast(currentresultLocal);
-            }
-        });
-        buttons[0][5].setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                txtViewCorrect.setText("");
-int[][] currentresultLocal = new int[9][9];
-for(int i = 0; i < 9; i++){
-      for(int j = 0; j < 9; j++){
-            currentresultLocal[i][j] = zwischenstand.getLast()[i][j];
-         }
-}
-                setButtonTextToCheckBox(buttons[0][5]);
-                machWas(0, 5);
-zwischenstand.addLast(currentresultLocal);
-            }
-        });
-        buttons[0][6].setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                txtViewCorrect.setText("");
-int[][] currentresultLocal = new int[9][9];
-for(int i = 0; i < 9; i++){
-      for(int j = 0; j < 9; j++){
-            currentresultLocal[i][j] = zwischenstand.getLast()[i][j];
-         }
-}
-                setButtonTextToCheckBox(buttons[0][6]);
-                machWas(0, 6);
-zwischenstand.addLast(currentresultLocal);
-            }
-        });
-        buttons[0][7].setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                txtViewCorrect.setText("");
-int[][] currentresultLocal = new int[9][9];
-for(int i = 0; i < 9; i++){
-      for(int j = 0; j < 9; j++){
-            currentresultLocal[i][j] = zwischenstand.getLast()[i][j];
-         }
-}
-                setButtonTextToCheckBox(buttons[0][7]);
-                machWas(0, 7);
-zwischenstand.addLast(currentresultLocal);
-            }
-        });
-        buttons[0][8].setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                txtViewCorrect.setText("");
-int[][] currentresultLocal = new int[9][9];
-for(int i = 0; i < 9; i++){
-      for(int j = 0; j < 9; j++){
-            currentresultLocal[i][j] = zwischenstand.getLast()[i][j];
-         }
-}
-                setButtonTextToCheckBox(buttons[0][8]);
-                machWas(0, 8);
-            }
-        });
-
         //buttons Reihe 2
         buttons[1][0] = findViewById(R.id.btn21);
         buttons[1][1] = findViewById(R.id.btn22);
@@ -197,143 +62,6 @@ for(int i = 0; i < 9; i++){
         buttons[1][6] = findViewById(R.id.btn27);
         buttons[1][7] = findViewById(R.id.btn28);
         buttons[1][8] = findViewById(R.id.btn29);
-        //Buttons Reihe 2 OnClickListener
-        buttons[1][0].setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                txtViewCorrect.setText("");
-int[][] currentresultLocal = new int[9][9];
-for(int i = 0; i < 9; i++){
-      for(int j = 0; j < 9; j++){
-            currentresultLocal[i][j] = zwischenstand.getLast()[i][j];
-         }
-}
-                setButtonTextToCheckBox(buttons[1][0]);
-                machWas(1, 0);
-zwischenstand.addLast(currentresultLocal);
-            }
-        });
-        buttons[1][1].setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                txtViewCorrect.setText("");
-int[][] currentresultLocal = new int[9][9];
-for(int i = 0; i < 9; i++){
-      for(int j = 0; j < 9; j++){
-            currentresultLocal[i][j] = zwischenstand.getLast()[i][j];
-         }
-}
-                setButtonTextToCheckBox(buttons[1][1]);
-                machWas(1, 1);
-zwischenstand.addLast(currentresultLocal);
-            }
-        });
-        buttons[1][2].setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                txtViewCorrect.setText("");
-int[][] currentresultLocal = new int[9][9];
-for(int i = 0; i < 9; i++){
-      for(int j = 0; j < 9; j++){
-            currentresultLocal[i][j] = zwischenstand.getLast()[i][j];
-         }
-}
-                setButtonTextToCheckBox(buttons[1][2]);
-                machWas(1, 2);
-zwischenstand.addLast(currentresultLocal);
-            }
-        });
-        buttons[1][3].setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                txtViewCorrect.setText("");
-int[][] currentresultLocal = new int[9][9];
-for(int i = 0; i < 9; i++){
-      for(int j = 0; j < 9; j++){
-            currentresultLocal[i][j] = zwischenstand.getLast()[i][j];
-         }
-}
-                setButtonTextToCheckBox(buttons[1][3]);
-                machWas(1, 3);
-zwischenstand.addLast(currentresultLocal);
-            }
-        });
-        buttons[1][4].setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                txtViewCorrect.setText("");
-int[][] currentresultLocal = new int[9][9];
-for(int i = 0; i < 9; i++){
-      for(int j = 0; j < 9; j++){
-            currentresultLocal[i][j] = zwischenstand.getLast()[i][j];
-         }
-}
-                setButtonTextToCheckBox(buttons[1][4]);
-                machWas(1, 4);
-zwischenstand.addLast(currentresultLocal);
-            }
-        });
-        buttons[1][5].setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                txtViewCorrect.setText("");
-int[][] currentresultLocal = new int[9][9];
-for(int i = 0; i < 9; i++){
-      for(int j = 0; j < 9; j++){
-            currentresultLocal[i][j] = zwischenstand.getLast()[i][j];
-         }
-}
-                setButtonTextToCheckBox(buttons[1][5]);
-                machWas(1, 5);
-zwischenstand.addLast(currentresultLocal);
-            }
-        });
-        buttons[1][6].setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                txtViewCorrect.setText("");
-int[][] currentresultLocal = new int[9][9];
-for(int i = 0; i < 9; i++){
-      for(int j = 0; j < 9; j++){
-            currentresultLocal[i][j] = zwischenstand.getLast()[i][j];
-         }
-}
-                setButtonTextToCheckBox(buttons[1][6]);
-                machWas(1, 6);
-zwischenstand.addLast(currentresultLocal);
-            }
-        });
-        buttons[1][7].setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                txtViewCorrect.setText("");
-int[][] currentresultLocal = new int[9][9];
-for(int i = 0; i < 9; i++){
-      for(int j = 0; j < 9; j++){
-            currentresultLocal[i][j] = zwischenstand.getLast()[i][j];
-         }
-}
-                setButtonTextToCheckBox(buttons[1][7]);
-                machWas(1, 7);
-zwischenstand.addLast(currentresultLocal);
-            }
-        });
-        buttons[1][8].setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                txtViewCorrect.setText("");
-int[][] currentresultLocal = new int[9][9];
-for(int i = 0; i < 9; i++){
-      for(int j = 0; j < 9; j++){
-            currentresultLocal[i][j] = zwischenstand.getLast()[i][j];
-         }
-}
-                setButtonTextToCheckBox(buttons[1][8]);
-                machWas(1, 8);
-zwischenstand.addLast(currentresultLocal);
-            }
-        });
-
         //buttons Reihe 3
         buttons[2][0] = findViewById(R.id.btn31);
         buttons[2][1] = findViewById(R.id.btn32);
@@ -344,142 +72,6 @@ zwischenstand.addLast(currentresultLocal);
         buttons[2][6] = findViewById(R.id.btn37);
         buttons[2][7] = findViewById(R.id.btn38);
         buttons[2][8] = findViewById(R.id.btn39);
-        //Buttons Reihe 3 OnClickListener
-        buttons[2][0].setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                txtViewCorrect.setText("");
-int[][] currentresultLocal = new int[9][9];
-for(int i = 0; i < 9; i++){
-      for(int j = 0; j < 9; j++){
-            currentresultLocal[i][j] = zwischenstand.getLast()[i][j];
-         }
-}
-                setButtonTextToCheckBox(buttons[2][0]);
-                machWas(2, 0);
-zwischenstand.addLast(currentresultLocal);
-            }
-        });
-        buttons[2][1].setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                txtViewCorrect.setText("");
-int[][] currentresultLocal = new int[9][9];
-for(int i = 0; i < 9; i++){
-      for(int j = 0; j < 9; j++){
-            currentresultLocal[i][j] = zwischenstand.getLast()[i][j];
-         }
-}
-                setButtonTextToCheckBox(buttons[2][1]);
-                machWas(2, 1);
-zwischenstand.addLast(currentresultLocal);
-            }
-        });
-        buttons[2][2].setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                txtViewCorrect.setText("");
-int[][] currentresultLocal = new int[9][9];
-for(int i = 0; i < 9; i++){
-      for(int j = 0; j < 9; j++){
-            currentresultLocal[i][j] = zwischenstand.getLast()[i][j];
-         }
-}
-                setButtonTextToCheckBox(buttons[2][2]);
-                machWas(2, 2);
-zwischenstand.addLast(currentresultLocal);
-            }
-        });
-        buttons[2][3].setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                txtViewCorrect.setText("");
-int[][] currentresultLocal = new int[9][9];
-for(int i = 0; i < 9; i++){
-      for(int j = 0; j < 9; j++){
-            currentresultLocal[i][j] = zwischenstand.getLast()[i][j];
-         }
-}
-                setButtonTextToCheckBox(buttons[2][3]);
-                machWas(2, 3);
-zwischenstand.addLast(currentresultLocal);
-            }
-        });
-        buttons[2][4].setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                txtViewCorrect.setText("");
-int[][] currentresultLocal = new int[9][9];
-for(int i = 0; i < 9; i++){
-      for(int j = 0; j < 9; j++){
-            currentresultLocal[i][j] = zwischenstand.getLast()[i][j];
-         }
-}
-                setButtonTextToCheckBox(buttons[2][4]);
-                machWas(2, 4);
-zwischenstand.addLast(currentresultLocal);
-            }
-        });
-        buttons[2][5].setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                txtViewCorrect.setText("");
-int[][] currentresultLocal = new int[9][9];
-for(int i = 0; i < 9; i++){
-      for(int j = 0; j < 9; j++){
-            currentresultLocal[i][j] = zwischenstand.getLast()[i][j];
-         }
-}
-                setButtonTextToCheckBox(buttons[2][5]);
-                machWas(2, 5);
-zwischenstand.addLast(currentresultLocal);
-            }
-        });
-        buttons[2][6].setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                txtViewCorrect.setText("");
-int[][] currentresultLocal = new int[9][9];
-for(int i = 0; i < 9; i++){
-      for(int j = 0; j < 9; j++){
-            currentresultLocal[i][j] = zwischenstand.getLast()[i][j];
-         }
-}
-                setButtonTextToCheckBox(buttons[2][6]);
-                machWas(2, 6);
-zwischenstand.addLast(currentresultLocal);
-            }
-        });
-        buttons[2][7].setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                txtViewCorrect.setText("");
-int[][] currentresultLocal = new int[9][9];
-for(int i = 0; i < 9; i++){
-      for(int j = 0; j < 9; j++){
-            currentresultLocal[i][j] = zwischenstand.getLast()[i][j];
-         }
-}
-                setButtonTextToCheckBox(buttons[2][7]);
-                machWas(2, 7);
-zwischenstand.addLast(currentresultLocal);
-            }
-        });
-        buttons[2][8].setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                txtViewCorrect.setText("");
-int[][] currentresultLocal = new int[9][9];
-for(int i = 0; i < 9; i++){
-      for(int j = 0; j < 9; j++){
-            currentresultLocal[i][j] = zwischenstand.getLast()[i][j];
-         }
-}
-                setButtonTextToCheckBox(buttons[2][8]);
-                machWas(2, 8);
-zwischenstand.addLast(currentresultLocal);
-            }
-        });
         //buttons reihe 4
         buttons[3][0] = findViewById(R.id.btn41);
         buttons[3][1] = findViewById(R.id.btn42);
@@ -490,143 +82,6 @@ zwischenstand.addLast(currentresultLocal);
         buttons[3][6] = findViewById(R.id.btn47);
         buttons[3][7] = findViewById(R.id.btn48);
         buttons[3][8] = findViewById(R.id.btn49);
-        //Buttons Reihe 4 OnClickListener
-        buttons[3][0].setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                txtViewCorrect.setText("");
-int[][] currentresultLocal = new int[9][9];
-for(int i = 0; i < 9; i++){
-      for(int j = 0; j < 9; j++){
-            currentresultLocal[i][j] = zwischenstand.getLast()[i][j];
-         }
-}
-                setButtonTextToCheckBox(buttons[3][0]);
-                machWas(3, 0);
-zwischenstand.addLast(currentresultLocal);
-            }
-        });
-        buttons[3][1].setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                txtViewCorrect.setText("");
-int[][] currentresultLocal = new int[9][9];
-for(int i = 0; i < 9; i++){
-      for(int j = 0; j < 9; j++){
-            currentresultLocal[i][j] = zwischenstand.getLast()[i][j];
-         }
-}
-                setButtonTextToCheckBox(buttons[3][1]);
-                machWas(3, 1);
-zwischenstand.addLast(currentresultLocal);
-            }
-        });
-        buttons[3][2].setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                txtViewCorrect.setText("");
-int[][] currentresultLocal = new int[9][9];
-for(int i = 0; i < 9; i++){
-      for(int j = 0; j < 9; j++){
-            currentresultLocal[i][j] = zwischenstand.getLast()[i][j];
-         }
-}
-                setButtonTextToCheckBox(buttons[3][2]);
-                machWas(3, 2);
-zwischenstand.addLast(currentresultLocal);
-            }
-        });
-        buttons[3][3].setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                txtViewCorrect.setText("");
-int[][] currentresultLocal = new int[9][9];
-for(int i = 0; i < 9; i++){
-      for(int j = 0; j < 9; j++){
-            currentresultLocal[i][j] = zwischenstand.getLast()[i][j];
-         }
-}
-                setButtonTextToCheckBox(buttons[3][3]);
-                machWas(3, 3);
-zwischenstand.addLast(currentresultLocal);
-            }
-        });
-        buttons[3][4].setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                txtViewCorrect.setText("");
-int[][] currentresultLocal = new int[9][9];
-for(int i = 0; i < 9; i++){
-      for(int j = 0; j < 9; j++){
-            currentresultLocal[i][j] = zwischenstand.getLast()[i][j];
-         }
-}
-                setButtonTextToCheckBox(buttons[3][4]);
-                machWas(3, 4);
-zwischenstand.addLast(currentresultLocal);
-            }
-        });
-        buttons[3][5].setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                txtViewCorrect.setText("");
-int[][] currentresultLocal = new int[9][9];
-for(int i = 0; i < 9; i++){
-      for(int j = 0; j < 9; j++){
-            currentresultLocal[i][j] = zwischenstand.getLast()[i][j];
-         }
-}
-                setButtonTextToCheckBox(buttons[3][5]);
-                machWas(3, 5);
-zwischenstand.addLast(currentresultLocal);
-            }
-        });
-        buttons[3][6].setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                txtViewCorrect.setText("");
-int[][] currentresultLocal = new int[9][9];
-for(int i = 0; i < 9; i++){
-      for(int j = 0; j < 9; j++){
-            currentresultLocal[i][j] = zwischenstand.getLast()[i][j];
-         }
-}
-                setButtonTextToCheckBox(buttons[3][6]);
-                machWas(3, 6);
-zwischenstand.addLast(currentresultLocal);
-            }
-        });
-        buttons[3][7].setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                txtViewCorrect.setText("");
-int[][] currentresultLocal = new int[9][9];
-for(int i = 0; i < 9; i++){
-      for(int j = 0; j < 9; j++){
-            currentresultLocal[i][j] = zwischenstand.getLast()[i][j];
-         }
-}
-                setButtonTextToCheckBox(buttons[3][7]);
-                machWas(3, 7);
-zwischenstand.addLast(currentresultLocal);
-            }
-        });
-        buttons[3][8].setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                txtViewCorrect.setText("");
-int[][] currentresultLocal = new int[9][9];
-for(int i = 0; i < 9; i++){
-      for(int j = 0; j < 9; j++){
-            currentresultLocal[i][j] = zwischenstand.getLast()[i][j];
-         }
-}
-                setButtonTextToCheckBox(buttons[3][8]);
-                machWas(3, 8);
-zwischenstand.addLast(currentresultLocal);
-            }
-        });
-
         //buttons Reihe 5
         buttons[4][0] = findViewById(R.id.btn51);
         buttons[4][1] = findViewById(R.id.btn52);
@@ -637,144 +92,6 @@ zwischenstand.addLast(currentresultLocal);
         buttons[4][6] = findViewById(R.id.btn57);
         buttons[4][7] = findViewById(R.id.btn58);
         buttons[4][8] = findViewById(R.id.btn59);
-        //Buttons Reihe 5 OnClickListener
-        buttons[4][0].setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                txtViewCorrect.setText("");
-int[][] currentresultLocal = new int[9][9];
-for(int i = 0; i < 9; i++){
-      for(int j = 0; j < 9; j++){
-            currentresultLocal[i][j] = zwischenstand.getLast()[i][j];
-         }
-}
-                setButtonTextToCheckBox(buttons[4][0]);
-                machWas(4, 0);
-zwischenstand.addLast(currentresultLocal);
-            }
-        });
-        buttons[4][1].setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                txtViewCorrect.setText("");
-int[][] currentresultLocal = new int[9][9];
-for(int i = 0; i < 9; i++){
-      for(int j = 0; j < 9; j++){
-            currentresultLocal[i][j] = zwischenstand.getLast()[i][j];
-         }
-}
-                setButtonTextToCheckBox(buttons[4][1]);
-                machWas(4, 1);
-zwischenstand.addLast(currentresultLocal);
-            }
-        });
-        buttons[4][2].setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                txtViewCorrect.setText("");
-int[][] currentresultLocal = new int[9][9];
-for(int i = 0; i < 9; i++){
-      for(int j = 0; j < 9; j++){
-            currentresultLocal[i][j] = zwischenstand.getLast()[i][j];
-         }
-}
-                setButtonTextToCheckBox(buttons[4][2]);
-                machWas(4, 2);
-zwischenstand.addLast(currentresultLocal);
-            }
-        });
-        buttons[4][3].setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                txtViewCorrect.setText("");
-int[][] currentresultLocal = new int[9][9];
-for(int i = 0; i < 9; i++){
-      for(int j = 0; j < 9; j++){
-            currentresultLocal[i][j] = zwischenstand.getLast()[i][j];
-         }
-}
-                setButtonTextToCheckBox(buttons[4][3]);
-                machWas(4, 3);
-zwischenstand.addLast(currentresultLocal);
-            }
-        });
-        buttons[4][4].setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                txtViewCorrect.setText("");
-int[][] currentresultLocal = new int[9][9];
-for(int i = 0; i < 9; i++){
-      for(int j = 0; j < 9; j++){
-            currentresultLocal[i][j] = zwischenstand.getLast()[i][j];
-         }
-}
-                setButtonTextToCheckBox(buttons[4][4]);
-                machWas(4, 4);
-zwischenstand.addLast(currentresultLocal);
-            }
-        });
-        buttons[4][5].setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                txtViewCorrect.setText("");
-int[][] currentresultLocal = new int[9][9];
-for(int i = 0; i < 9; i++){
-      for(int j = 0; j < 9; j++){
-            currentresultLocal[i][j] = zwischenstand.getLast()[i][j];
-         }
-}
-                setButtonTextToCheckBox(buttons[4][5]);
-                machWas(4, 5);
-zwischenstand.addLast(currentresultLocal);
-            }
-        });
-        buttons[4][6].setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                txtViewCorrect.setText("");
-int[][] currentresultLocal = new int[9][9];
-for(int i = 0; i < 9; i++){
-      for(int j = 0; j < 9; j++){
-            currentresultLocal[i][j] = zwischenstand.getLast()[i][j];
-         }
-}
-                setButtonTextToCheckBox(buttons[4][6]);
-                machWas(4, 6);
-zwischenstand.addLast(currentresultLocal);
-            }
-        });
-        buttons[4][7].setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                txtViewCorrect.setText("");
-int[][] currentresultLocal = new int[9][9];
-for(int i = 0; i < 9; i++){
-      for(int j = 0; j < 9; j++){
-            currentresultLocal[i][j] = zwischenstand.getLast()[i][j];
-         }
-}
-                setButtonTextToCheckBox(buttons[4][7]);
-                machWas(4, 7);
-zwischenstand.addLast(currentresultLocal);
-            }
-        });
-        buttons[4][8].setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                txtViewCorrect.setText("");
-int[][] currentresultLocal = new int[9][9];
-for(int i = 0; i < 9; i++){
-      for(int j = 0; j < 9; j++){
-            currentresultLocal[i][j] = zwischenstand.getLast()[i][j];
-         }
-}
-                setButtonTextToCheckBox(buttons[4][8]);
-                machWas(4, 8);
-zwischenstand.addLast(currentresultLocal);
-            }
-        });
-
-
         //buttons Reihe 6
         buttons[5][0] = findViewById(R.id.btn61);
         buttons[5][1] = findViewById(R.id.btn62);
@@ -785,144 +102,6 @@ zwischenstand.addLast(currentresultLocal);
         buttons[5][6] = findViewById(R.id.btn67);
         buttons[5][7] = findViewById(R.id.btn68);
         buttons[5][8] = findViewById(R.id.btn69);
-        //Buttons Reihe 6 OnClickListener
-        buttons[5][0].setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                txtViewCorrect.setText("");
-int[][] currentresultLocal = new int[9][9];
-for(int i = 0; i < 9; i++){
-      for(int j = 0; j < 9; j++){
-            currentresultLocal[i][j] = zwischenstand.getLast()[i][j];
-         }
-}
-                setButtonTextToCheckBox(buttons[5][0]);
-                machWas(5, 0);
-zwischenstand.addLast(currentresultLocal);
-            }
-        });
-        buttons[5][1].setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                txtViewCorrect.setText("");
-int[][] currentresultLocal = new int[9][9];
-for(int i = 0; i < 9; i++){
-      for(int j = 0; j < 9; j++){
-            currentresultLocal[i][j] = zwischenstand.getLast()[i][j];
-         }
-}
-                setButtonTextToCheckBox(buttons[5][1]);
-                machWas(5, 1);
-zwischenstand.addLast(currentresultLocal);
-            }
-        });
-        buttons[5][2].setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                txtViewCorrect.setText("");
-int[][] currentresultLocal = new int[9][9];
-for(int i = 0; i < 9; i++){
-      for(int j = 0; j < 9; j++){
-            currentresultLocal[i][j] = zwischenstand.getLast()[i][j];
-         }
-}
-                setButtonTextToCheckBox(buttons[5][2]);
-                machWas(5, 2);
-zwischenstand.addLast(currentresultLocal);
-            }
-        });
-        buttons[5][3].setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                txtViewCorrect.setText("");
-int[][] currentresultLocal = new int[9][9];
-for(int i = 0; i < 9; i++){
-      for(int j = 0; j < 9; j++){
-            currentresultLocal[i][j] = zwischenstand.getLast()[i][j];
-         }
-}
-                setButtonTextToCheckBox(buttons[5][3]);
-                machWas(5, 3);
-zwischenstand.addLast(currentresultLocal);
-            }
-        });
-        buttons[5][4].setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                txtViewCorrect.setText("");
-int[][] currentresultLocal = new int[9][9];
-for(int i = 0; i < 9; i++){
-      for(int j = 0; j < 9; j++){
-            currentresultLocal[i][j] = zwischenstand.getLast()[i][j];
-         }
-}
-                setButtonTextToCheckBox(buttons[5][4]);
-                machWas(5, 4);
-zwischenstand.addLast(currentresultLocal);
-            }
-        });
-        buttons[5][5].setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                txtViewCorrect.setText("");
-int[][] currentresultLocal = new int[9][9];
-for(int i = 0; i < 9; i++){
-      for(int j = 0; j < 9; j++){
-            currentresultLocal[i][j] = zwischenstand.getLast()[i][j];
-         }
-}
-                setButtonTextToCheckBox(buttons[5][5]);
-                machWas(5, 5);
-zwischenstand.addLast(currentresultLocal);
-            }
-        });
-        buttons[5][6].setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                txtViewCorrect.setText("");
-int[][] currentresultLocal = new int[9][9];
-for(int i = 0; i < 9; i++){
-      for(int j = 0; j < 9; j++){
-            currentresultLocal[i][j] = zwischenstand.getLast()[i][j];
-         }
-}
-                setButtonTextToCheckBox(buttons[5][6]);
-                machWas(5, 6);
-zwischenstand.addLast(currentresultLocal);
-            }
-        });
-        buttons[5][7].setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                txtViewCorrect.setText("");
-int[][] currentresultLocal = new int[9][9];
-for(int i = 0; i < 9; i++){
-      for(int j = 0; j < 9; j++){
-            currentresultLocal[i][j] = zwischenstand.getLast()[i][j];
-         }
-}
-                setButtonTextToCheckBox(buttons[5][7]);
-                machWas(5, 7);
-zwischenstand.addLast(currentresultLocal);
-            }
-        });
-        buttons[5][8].setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                txtViewCorrect.setText("");
-int[][] currentresultLocal = new int[9][9];
-for(int i = 0; i < 9; i++){
-      for(int j = 0; j < 9; j++){
-            currentresultLocal[i][j] = zwischenstand.getLast()[i][j];
-         }
-}
-                setButtonTextToCheckBox(buttons[5][8]);
-                machWas(5, 8);
-zwischenstand.addLast(currentresultLocal);
-            }
-        });
-
-
         //buttons Reihe 7
         buttons[6][0] = findViewById(R.id.btn71);
         buttons[6][1] = findViewById(R.id.btn72);
@@ -933,144 +112,6 @@ zwischenstand.addLast(currentresultLocal);
         buttons[6][6] = findViewById(R.id.btn77);
         buttons[6][7] = findViewById(R.id.btn78);
         buttons[6][8] = findViewById(R.id.btn79);
-        //Buttons Reihe 7 OnClickListener
-        buttons[6][0].setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                txtViewCorrect.setText("");
-int[][] currentresultLocal = new int[9][9];
-for(int i = 0; i < 9; i++){
-      for(int j = 0; j < 9; j++){
-            currentresultLocal[i][j] = zwischenstand.getLast()[i][j];
-         }
-}
-                setButtonTextToCheckBox(buttons[6][0]);
-                machWas(6, 0);
-zwischenstand.addLast(currentresultLocal);
-            }
-        });
-        buttons[6][1].setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                txtViewCorrect.setText("");
-int[][] currentresultLocal = new int[9][9];
-for(int i = 0; i < 9; i++){
-      for(int j = 0; j < 9; j++){
-            currentresultLocal[i][j] = zwischenstand.getLast()[i][j];
-         }
-}
-                setButtonTextToCheckBox(buttons[6][1]);
-                machWas(6, 1);
-zwischenstand.addLast(currentresultLocal);
-            }
-        });
-        buttons[6][2].setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                txtViewCorrect.setText("");
-int[][] currentresultLocal = new int[9][9];
-for(int i = 0; i < 9; i++){
-      for(int j = 0; j < 9; j++){
-            currentresultLocal[i][j] = zwischenstand.getLast()[i][j];
-         }
-}
-                setButtonTextToCheckBox(buttons[6][2]);
-                machWas(6, 2);
-zwischenstand.addLast(currentresultLocal);
-            }
-        });
-        buttons[6][3].setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                txtViewCorrect.setText("");
-int[][] currentresultLocal = new int[9][9];
-for(int i = 0; i < 9; i++){
-      for(int j = 0; j < 9; j++){
-            currentresultLocal[i][j] = zwischenstand.getLast()[i][j];
-         }
-}
-                setButtonTextToCheckBox(buttons[6][3]);
-                machWas(6, 3);
-zwischenstand.addLast(currentresultLocal);
-            }
-        });
-        buttons[6][4].setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                txtViewCorrect.setText("");
-int[][] currentresultLocal = new int[9][9];
-for(int i = 0; i < 9; i++){
-      for(int j = 0; j < 9; j++){
-            currentresultLocal[i][j] = zwischenstand.getLast()[i][j];
-         }
-}
-                setButtonTextToCheckBox(buttons[6][4]);
-                machWas(6, 4);
-zwischenstand.addLast(currentresultLocal);
-            }
-        });
-        buttons[6][5].setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                txtViewCorrect.setText("");
-int[][] currentresultLocal = new int[9][9];
-for(int i = 0; i < 9; i++){
-      for(int j = 0; j < 9; j++){
-            currentresultLocal[i][j] = zwischenstand.getLast()[i][j];
-         }
-}
-                setButtonTextToCheckBox(buttons[6][5]);
-                machWas(6, 5);
-zwischenstand.addLast(currentresultLocal);
-            }
-        });
-        buttons[6][6].setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                txtViewCorrect.setText("");
-int[][] currentresultLocal = new int[9][9];
-for(int i = 0; i < 9; i++){
-      for(int j = 0; j < 9; j++){
-            currentresultLocal[i][j] = zwischenstand.getLast()[i][j];
-         }
-}
-                setButtonTextToCheckBox(buttons[6][6]);
-                machWas(6, 6);
-zwischenstand.addLast(currentresultLocal);
-            }
-        });
-        buttons[6][7].setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                txtViewCorrect.setText("");
-int[][] currentresultLocal = new int[9][9];
-for(int i = 0; i < 9; i++){
-      for(int j = 0; j < 9; j++){
-            currentresultLocal[i][j] = zwischenstand.getLast()[i][j];
-         }
-}
-                setButtonTextToCheckBox(buttons[6][7]);
-                machWas(6, 7);
-zwischenstand.addLast(currentresultLocal);
-            }
-        });
-        buttons[6][8].setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                txtViewCorrect.setText("");
-int[][] currentresultLocal = new int[9][9];
-for(int i = 0; i < 9; i++){
-      for(int j = 0; j < 9; j++){
-            currentresultLocal[i][j] = zwischenstand.getLast()[i][j];
-         }
-}
-                setButtonTextToCheckBox(buttons[6][8]);
-                machWas(6, 8);
-zwischenstand.addLast(currentresultLocal);
-            }
-        });
-
-
         //buttons Reihe 8
         buttons[7][0] = findViewById(R.id.btn81);
         buttons[7][1] = findViewById(R.id.btn82);
@@ -1081,144 +122,6 @@ zwischenstand.addLast(currentresultLocal);
         buttons[7][6] = findViewById(R.id.btn87);
         buttons[7][7] = findViewById(R.id.btn88);
         buttons[7][8] = findViewById(R.id.btn89);
-        //Buttons Reihe 8 OnClickListener
-        buttons[7][0].setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                txtViewCorrect.setText("");
-int[][] currentresultLocal = new int[9][9];
-for(int i = 0; i < 9; i++){
-      for(int j = 0; j < 9; j++){
-            currentresultLocal[i][j] = zwischenstand.getLast()[i][j];
-         }
-}
-                setButtonTextToCheckBox(buttons[7][0]);
-                machWas(7, 0);
-zwischenstand.addLast(currentresultLocal);
-            }
-        });
-        buttons[7][1].setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                txtViewCorrect.setText("");
-int[][] currentresultLocal = new int[9][9];
-for(int i = 0; i < 9; i++){
-      for(int j = 0; j < 9; j++){
-            currentresultLocal[i][j] = zwischenstand.getLast()[i][j];
-         }
-}
-                setButtonTextToCheckBox(buttons[7][1]);
-                machWas(7, 1);
-zwischenstand.addLast(currentresultLocal);
-            }
-        });
-        buttons[7][2].setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                txtViewCorrect.setText("");
-int[][] currentresultLocal = new int[9][9];
-for(int i = 0; i < 9; i++){
-      for(int j = 0; j < 9; j++){
-            currentresultLocal[i][j] = zwischenstand.getLast()[i][j];
-         }
-}
-                setButtonTextToCheckBox(buttons[7][2]);
-                machWas(7, 2);
-zwischenstand.addLast(currentresultLocal);
-            }
-        });
-        buttons[7][3].setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                txtViewCorrect.setText("");
-int[][] currentresultLocal = new int[9][9];
-for(int i = 0; i < 9; i++){
-      for(int j = 0; j < 9; j++){
-            currentresultLocal[i][j] = zwischenstand.getLast()[i][j];
-         }
-}
-                setButtonTextToCheckBox(buttons[7][3]);
-                machWas(7, 3);
-zwischenstand.addLast(currentresultLocal);
-            }
-        });
-        buttons[7][4].setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                txtViewCorrect.setText("");
-int[][] currentresultLocal = new int[9][9];
-for(int i = 0; i < 9; i++){
-      for(int j = 0; j < 9; j++){
-            currentresultLocal[i][j] = zwischenstand.getLast()[i][j];
-         }
-}
-                setButtonTextToCheckBox(buttons[7][4]);
-                machWas(7,4);
-                zwischenstand.addLast(currentresultLocal);
-            }
-        });
-        buttons[7][5].setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                txtViewCorrect.setText("");
-int[][] currentresultLocal = new int[9][9];
-for(int i = 0; i < 9; i++){
-      for(int j = 0; j < 9; j++){
-            currentresultLocal[i][j] = zwischenstand.getLast()[i][j];
-         }
-}
-                setButtonTextToCheckBox(buttons[7][5]);
-                machWas(7, 5);
-zwischenstand.addLast(currentresultLocal);
-            }
-        });
-        buttons[7][6].setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                txtViewCorrect.setText("");
-int[][] currentresultLocal = new int[9][9];
-for(int i = 0; i < 9; i++){
-      for(int j = 0; j < 9; j++){
-            currentresultLocal[i][j] = zwischenstand.getLast()[i][j];
-         }
-}
-                setButtonTextToCheckBox(buttons[7][6]);
-                machWas(7, 6);
-zwischenstand.addLast(currentresultLocal);
-            }
-        });
-        buttons[7][7].setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                txtViewCorrect.setText("");
-int[][] currentresultLocal = new int[9][9];
-for(int i = 0; i < 9; i++){
-      for(int j = 0; j < 9; j++){
-            currentresultLocal[i][j] = zwischenstand.getLast()[i][j];
-         }
-}
-                setButtonTextToCheckBox(buttons[7][7]);
-                machWas(7, 7);
-zwischenstand.addLast(currentresultLocal);
-            }
-        });
-        buttons[7][8].setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                txtViewCorrect.setText("");
-int[][] currentresultLocal = new int[9][9];
-for(int i = 0; i < 9; i++){
-      for(int j = 0; j < 9; j++){
-            currentresultLocal[i][j] = zwischenstand.getLast()[i][j];
-         }
-}
-                setButtonTextToCheckBox(buttons[7][8]);
-                machWas(7, 8);
-zwischenstand.addLast(currentresultLocal);
-            }
-        });
-
-
         //buttons Reihe 9
         buttons[8][0] = findViewById(R.id.btn91);
         buttons[8][1] = findViewById(R.id.btn92);
@@ -1229,142 +132,13 @@ zwischenstand.addLast(currentresultLocal);
         buttons[8][6] = findViewById(R.id.btn97);
         buttons[8][7] = findViewById(R.id.btn98);
         buttons[8][8] = findViewById(R.id.btn99);
-        //Buttons Reihe 9 OnClickListener
-        buttons[8][0].setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                txtViewCorrect.setText("");
-int[][] currentresultLocal = new int[9][9];
-for(int i = 0; i < 9; i++){
-      for(int j = 0; j < 9; j++){
-            currentresultLocal[i][j] = zwischenstand.getLast()[i][j];
-         }
-}
-                currentresultLocal[8][0] = setButtonTextToCheckBox(buttons[8][0]);
-                machWas(8, 0);
-zwischenstand.addLast(currentresultLocal);
+
+
+        for(int i = 0; i < 9; i++){                                                                 //setzt mir die ClickListener
+            for(int j = 0; j < 9; j++){
+                buttons[i][j].setOnClickListener(this);
             }
-        });
-        buttons[8][1].setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                txtViewCorrect.setText("");
-int[][] currentresultLocal = new int[9][9];
-for(int i = 0; i < 9; i++){
-      for(int j = 0; j < 9; j++){
-            currentresultLocal[i][j] = zwischenstand.getLast()[i][j];
-         }
-}
-                currentresultLocal[8][1] = setButtonTextToCheckBox(buttons[8][1]);
-                machWas(8, 1);
-zwischenstand.addLast(currentresultLocal);
-            }
-        });
-        buttons[8][2].setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                txtViewCorrect.setText("");
-int[][] currentresultLocal = new int[9][9];
-for(int i = 0; i < 9; i++){
-      for(int j = 0; j < 9; j++){
-            currentresultLocal[i][j] = zwischenstand.getLast()[i][j];
-         }
-}
-                currentresultLocal[8][2] = setButtonTextToCheckBox(buttons[8][2]);
-                machWas(8, 2);
-zwischenstand.addLast(currentresultLocal);
-            }
-        });
-        buttons[8][3].setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                txtViewCorrect.setText("");
-int[][] currentresultLocal = new int[9][9];
-for(int i = 0; i < 9; i++){
-      for(int j = 0; j < 9; j++){
-            currentresultLocal[i][j] = zwischenstand.getLast()[i][j];
-         }
-}
-                currentresultLocal[8][3] = setButtonTextToCheckBox(buttons[8][3]);
-                machWas(8, 3);
-zwischenstand.addLast(currentresultLocal);
-            }
-        });
-        buttons[8][4].setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                txtViewCorrect.setText("");
-int[][] currentresultLocal = new int[9][9];
-for(int i = 0; i < 9; i++){
-      for(int j = 0; j < 9; j++){
-            currentresultLocal[i][j] = zwischenstand.getLast()[i][j];
-         }
-}
-                currentresultLocal[8][4] = setButtonTextToCheckBox(buttons[8][4]);
-                machWas(8, 4);
-zwischenstand.addLast(currentresultLocal);
-            }
-        });
-        buttons[8][5].setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                txtViewCorrect.setText("");
-int[][] currentresultLocal = new int[9][9];
-for(int i = 0; i < 9; i++){
-      for(int j = 0; j < 9; j++){
-            currentresultLocal[i][j] = zwischenstand.getLast()[i][j];
-         }
-}
-                currentresultLocal[8][5] = setButtonTextToCheckBox(buttons[8][5]);
-                machWas(8, 5);
-zwischenstand.addLast(currentresultLocal);
-            }
-        });
-        buttons[8][6].setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                txtViewCorrect.setText("");
-int[][] currentresultLocal = new int[9][9];
-for(int i = 0; i < 9; i++){
-      for(int j = 0; j < 9; j++){
-            currentresultLocal[i][j] = zwischenstand.getLast()[i][j];
-         }
-}
-                currentresultLocal[8][6] = setButtonTextToCheckBox(buttons[8][6]);
-                machWas(8, 6);
-zwischenstand.addLast(currentresultLocal);
-            }
-        });
-        buttons[8][7].setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                txtViewCorrect.setText("");
-int[][] currentresultLocal = new int[9][9];
-for(int i = 0; i < 9; i++){
-      for(int j = 0; j < 9; j++){
-            currentresultLocal[i][j] = zwischenstand.getLast()[i][j];
-         }
-}
-                currentresultLocal[8][7] = setButtonTextToCheckBox(buttons[8][7]);
-                machWas(8, 7);
-zwischenstand.addLast(currentresultLocal);
-            }
-        });
-        buttons[8][8].setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                txtViewCorrect.setText("");
-                int[][] currentresultLocal = new int[9][9];
-                for(int i = 0; i < 9; i++){
-                    for(int j = 0; j < 9; j++){
-                        currentresultLocal[i][j] = zwischenstand.getLast()[i][j];
-                    }
-                }
-                currentresultLocal[8][8] = setButtonTextToCheckBox(buttons[8][8]);
-                machWas(8, 8);
-                zwischenstand.addLast(currentresultLocal);
-            }
-        });
+        }
 
 
         //buttons auswahl der zahlen
@@ -1509,15 +283,16 @@ zwischenstand.addLast(currentresultLocal);
         btnUndo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(!zwischenstand.isEmpty()){
-                    zwischenstand.removeLast();
-                    int[][] temp = zwischenstand.getLast();
-                    for(int i = 0; i < 9; i++){
-                        for(int j = 0; j < 9; j++){
-                            buttons[i][j].setText(String.valueOf(temp[i][j]));
-                        }
-                    }
-                }
+                //if(!zwischenstand.isEmpty()){
+                //    zwischenstand.removeLast();
+                //    int[][] temp = zwischenstand.getLast();
+                //    for(int i = 0; i < 9; i++){
+                //        for(int j = 0; j < 9; j++){
+                //            buttons[i][j].setText(String.valueOf(temp[i][j]));
+                //        }
+                //    }
+                //}
+                undo();
             }
         });
 
@@ -1599,9 +374,6 @@ zwischenstand.addLast(currentresultLocal);
         });
     }
 
-    public int[][] addToSudoku(){
-      return null;
-    }
 
     public int setButtonTextToCheckBox(Button button) {
         if (checkBoxes[0].isChecked()) {
@@ -1669,7 +441,7 @@ zwischenstand.addLast(currentresultLocal);
         return false;
     }
 
-    public void machWas(int row, int col) {                                                         //färbt das gerade eben angetippte Feld ein
+    public void colorCurrentButton(int row, int col) {                                                         //färbt das gerade eben angetippte Feld ein
         if (anyCheckBoxMarked()) {
             buttons[row][col].setTextColor(Color.RED);
             buttons[row][col].setTextSize(20);
@@ -1679,10 +451,437 @@ zwischenstand.addLast(currentresultLocal);
         }
     }
 
+    public void undo(){
+        LoadObject loadObject = storedMoves.getLast();
+        storedMoves.removeLast();
+        int row = loadObject.getRowPos();
+        int col = loadObject.getColPos();
+        int value = loadObject.getValueOld();
+        buttons[row][col].setText(String.valueOf(value));
+    }
+
     @Override
     public void onClick(View view) {
+        txtViewCorrect.setText("");
+        int[][] currentresultLocal = new int[9][9];
+        //for(int i = 0; i < 9; i++){
+        //    for(int j = 0; j < 9; j++){
+        //        currentresultLocal[i][j] = zwischenstand.getLast()[i][j];
+        //   }
+        //}
+        int row = 9;
+        int col = 9;                                                                                //hier werden row und col gesetzt jenachdem welcher button gepresst wurde
         switch(view.getId()){
+            case R.id.btn11:
+                row = 0;
+                col = 0;
+                break;
 
+            case R.id.btn12:
+                row = 0;
+                col = 1;
+                break;
+
+            case R.id.btn13:
+                row = 0;
+                col = 2;
+                break;
+            case R.id.btn14:
+                row = 0;
+                col = 3;
+                break;
+
+            case R.id.btn15:
+                row = 0;
+                col = 4;
+                break;
+            case R.id.btn16:
+                row = 0;
+                col = 5;
+                break;
+
+            case R.id.btn17:
+                row = 0;
+                col = 6;
+                break;
+
+            case R.id.btn18:
+                row = 0;
+                col = 7;
+                break;
+
+            case R.id.btn19:
+                row = 0;
+                col = 8;
+                break;
+
+            case R.id.btn21:
+                row = 1;
+                col = 0;
+                break;
+
+            case R.id.btn22:
+                row = 1;
+                col = 1;
+                break;
+
+            case R.id.btn23:
+                row = 1;
+                col = 2;
+                break;
+
+            case R.id.btn24:
+                row = 1;
+                col = 3;
+                break;
+
+            case R.id.btn25:
+                row = 1;
+                col = 4;
+                break;
+
+            case R.id.btn26:
+                row = 1;
+                col = 5;
+                break;
+
+            case R.id.btn27:
+                row = 1;
+                col = 6;
+                break;
+
+            case R.id.btn28:
+                row = 1;
+                col = 7;
+                break;
+
+            case R.id.btn29:
+                row = 1;
+                col = 8;
+                break;
+
+            case R.id.btn31:
+                row = 2;
+                col = 0;
+                break;
+
+            case R.id.btn32:
+                row = 2;
+                col = 1;
+                break;
+
+            case R.id.btn33:
+                row = 2;
+                col = 2;
+                break;
+
+            case R.id.btn34:
+                row = 2;
+                col = 3;
+                break;
+
+            case R.id.btn35:
+                row = 2;
+                col = 4;
+                break;
+
+            case R.id.btn36:
+                row = 2;
+                col = 5;
+                break;
+
+            case R.id.btn37:
+                row = 2;
+                col = 6;
+                break;
+
+            case R.id.btn38:
+                row = 2;
+                col = 7;
+                break;
+
+            case R.id.btn39:
+                row = 2;
+                col = 8;
+                break;
+
+            case R.id.btn41:
+                row = 3;
+                col = 0;
+                break;
+
+            case R.id.btn42:
+                row = 3;
+                col = 1;
+                break;
+
+            case R.id.btn43:
+                row = 3;
+                col = 2;
+                break;
+
+            case R.id.btn44:
+                row = 3;
+                col = 3;
+                break;
+
+            case R.id.btn45:
+                row = 3;
+                col = 4;
+                break;
+
+            case R.id.btn46:
+                row = 3;
+                col = 5;
+                break;
+
+            case R.id.btn47:
+                row = 3;
+                col = 6;
+                break;
+
+            case R.id.btn48:
+                row = 3;
+                col = 7;
+                break;
+
+            case R.id.btn49:
+                row = 3;
+                col = 8;
+                break;
+
+            case R.id.btn51:
+                row = 4;
+                col = 0;
+                break;
+
+            case R.id.btn52:
+                row = 4;
+                col = 1;
+                break;
+
+            case R.id.btn53:
+                row = 4;
+                col = 2;
+                break;
+
+            case R.id.btn54:
+                row = 4;
+                col = 3;
+                break;
+
+            case R.id.btn55:
+                row = 4;
+                col = 4;
+                break;
+
+            case R.id.btn56:
+                row = 4;
+                col = 5;
+                break;
+
+            case R.id.btn57:
+                row = 4;
+                col = 6;
+                break;
+
+            case R.id.btn58:
+                row = 4;
+                col = 7;
+                break;
+
+            case R.id.btn59:
+                row = 4;
+                col = 8;
+                break;
+
+            case R.id.btn61:
+                row = 5;
+                col = 0;
+                break;
+
+            case R.id.btn62:
+                row = 5;
+                col = 1;
+                break;
+
+            case R.id.btn63:
+                row = 5;
+                col = 2;
+                break;
+
+            case R.id.btn64:
+                row = 5;
+                col = 3;
+                break;
+
+            case R.id.btn65:
+                row = 5;
+                col = 4;
+                break;
+
+            case R.id.btn66:
+                row = 5;
+                col = 5;
+                break;
+
+            case R.id.btn67:
+                row = 5;
+                col = 6;
+                break;
+
+            case R.id.btn68:
+                row = 5;
+                col = 7;
+                break;
+
+            case R.id.btn69:
+                row = 5;
+                col = 8;
+                break;
+
+            case R.id.btn71:
+                row = 6;
+                col = 0;
+                break;
+
+            case R.id.btn72:
+                row = 6;
+                col = 1;
+                break;
+
+            case R.id.btn73:
+                row = 6;
+                col = 2;
+                break;
+
+            case R.id.btn74:
+                row = 6;
+                col = 3;
+                break;
+
+            case R.id.btn75:
+                row = 6;
+                col = 4;
+                break;
+
+            case R.id.btn76:
+                row = 6;
+                col = 5;
+                break;
+
+            case R.id.btn77:
+                row = 6;
+                col = 6;
+                break;
+
+            case R.id.btn78:
+                row = 6;
+                col = 7;
+                break;
+
+            case R.id.btn79:
+                row = 6;
+                col = 8;
+                break;
+
+            case R.id.btn81:
+                row = 7;
+                col = 0;
+                break;
+
+            case R.id.btn82:
+                row = 7;
+                col = 1;
+                break;
+
+            case R.id.btn83:
+                row = 7;
+                col = 2;
+                break;
+
+            case R.id.btn84:
+                row = 7;
+                col = 3;
+                break;
+
+            case R.id.btn85:
+                row = 7;
+                col = 4;
+                break;
+
+            case R.id.btn86:
+                row = 7;
+                col = 5;
+                break;
+
+            case R.id.btn87:
+                row = 7;
+                col = 6;
+                break;
+
+            case R.id.btn88:
+                row = 7;
+                col = 7;
+                break;
+
+            case R.id.btn89:
+                row = 7;
+                col = 8;
+                break;
+
+            case R.id.btn91:
+                row = 8;
+                col = 0;
+                break;
+
+            case R.id.btn92:
+                row = 8;
+                col = 1;
+                break;
+
+            case R.id.btn93:
+                row = 8;
+                col = 2;
+                break;
+
+            case R.id.btn94:
+                row = 8;
+                col = 3;
+                break;
+
+            case R.id.btn95:
+                row = 8;
+                col = 4;
+                break;
+
+            case R.id.btn96:
+                row = 8;
+                col = 5;
+                break;
+
+            case R.id.btn97:
+                row = 8;
+                col = 6;
+                break;
+
+            case R.id.btn98:
+                row = 8;
+                col = 7;
+                break;
+
+            case R.id.btn99:
+                row = 8;
+                col = 8;
+                break;
         }
+        //currentresultLocal[row][col] = setButtonTextToCheckBox(buttons[row][col]);
+        int setValue = setButtonTextToCheckBox(buttons[row][col]);
+        colorCurrentButton(row, col);
+        LoadObject currentLoadObject = new LoadObject(row, col, setValue);
+        storedMoves.addLast(currentLoadObject);
+        //zwischenstand.addLast(currentresultLocal);
     }
+
+
 }
